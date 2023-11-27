@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import foodsJson from './foods.json';
-import FoodBox from './components/FoodBox';
-import AddFoodForm from './components/AddFoodForm';
+import foodsJson from '../foods.json';
+import FoodBox from './FoodBox';
+import AddFoodForm from './AddFoodForm';
 
 function FoodList() {
   // Iteration 1: Store data in the state
