@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Divider, Input, Button } from 'antd';
 
 // Iteration 5: Add New Food
 
@@ -37,46 +38,35 @@ function AddFoodForm({ addFood }) {
   };
 
   return (
-    <div>
-      <h2>Add Food</h2>
+    <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='name'>Name:</label>
-        <input
-          type='text'
-          name='name'
-          id='name'
-          value={name}
-          onChange={handleName}
-        />
-        <label htmlFor='image'>Image:</label>
-        <input
-          type='text'
-          name='image'
-          id='image'
-          value={image}
-          onChange={handleImage}
-        />
-        <label htmlFor='calories'>Calories:</label>
-        <input
-          type='number'
+        <Divider>Add Food Entry</Divider>
+        <label>Name:</label>
+        <Input name='name' value={name} type='text' onChange={handleName} />
+
+        <label>Image URL:</label>
+        <Input name='image' value={image} type='text' onChange={handleImage} />
+
+        <label>Calories:</label>
+        <Input
           name='calories'
-          id='calories'
-          min={0}
           value={calories}
+          type='number'
           onChange={handleCalories}
         />
-        <label htmlFor='servings'>Servings:</label>
-        <input
-          type='number'
+
+        <label>Servings</label>
+        <Input
           name='servings'
-          id='servings'
-          min={0}
           value={servings}
+          type='number'
+          min={0}
           onChange={handleServings}
         />
-        <button type='submit'>Create</button>
+
+        <Button type='submit'>Create</Button>
       </form>
-    </div>
+    </>
   );
 }
 
